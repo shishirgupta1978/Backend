@@ -1,2 +1,2 @@
 # Backend
-Django Backend
+Backend Django Application
