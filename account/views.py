@@ -1,4 +1,5 @@
-
+from django.http import HttpResponse
+import datetime
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
@@ -13,3 +14,8 @@ class ListUsersView(generics.ListCreateAPIView):
     User=get_user_model()
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+def index(request):
+    now = datetime.datetime.now()
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)
